@@ -1,12 +1,11 @@
-import { requireNativeComponent, ViewProps } from 'react-native';
+import { requireNativeComponent } from 'react-native';
 import React from 'react';
+import { ViewStyle } from 'react-native';
 
-interface Props extends ViewProps {
-  color?: string;
+interface Props {
+  color: string;
+  style?: ViewStyle;
 }
 
-const NativeComponent = requireNativeComponent<Props>('CustomColorView');
-
-export default function CustomColorView(props: Props) {
-  return <NativeComponent {...props} />;
-}
+const CustomColorView = requireNativeComponent<Props>('CustomColorView');
+export default CustomColorView;

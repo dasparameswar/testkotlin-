@@ -1,12 +1,14 @@
-import React from 'react';
-import { SafeAreaView, Text } from 'react-native';
+import React, { useState } from 'react';
+import { View, Button } from 'react-native';
 import CustomColorView from './Components/CustomColorView';
 
-const App = () => (
-  <SafeAreaView style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-    <Text style={{ marginBottom: 8 }}>↓ Native Kotlin View</Text>
-    <CustomColorView style={{ width: 200, height: 200 }} color="#00FF7F" />
-  </SafeAreaView>
-);
+export default function App() {
+  const [color, setColor] = useState('#00FF00');
 
-export default App;
+  return (
+    <View style={{ flex: 1 }}>
+      <CustomColorView color={color} style={{ flex: 1 }} />
+      <Button title="Change to Red" onPress={() => setColor('#FF0000')} />
+    </View>
+  );
+}

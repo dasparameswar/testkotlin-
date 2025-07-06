@@ -6,7 +6,11 @@ import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.uimanager.ViewManager
 
 class CustomColorPackage : ReactPackage {
-  override fun createNativeModules(rc: ReactApplicationContext): List<NativeModule> = emptyList()
-  override fun createViewManagers(rc: ReactApplicationContext): List<ViewManager<*, *>> =
-      listOf(CustomColorViewManager())
+    override fun createNativeModules(reactContext: ReactApplicationContext): List<NativeModule> {
+        return emptyList()
+    }
+
+    override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<*, *>> {
+        return listOf(CustomColorViewManager())
+    }
 }
